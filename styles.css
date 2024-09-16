@@ -697,23 +697,20 @@ footer {
 }
 
 
-    /* Adjust the parallax section to match the projects */
-    .parallax {
-        height: 70vh; 
-        background-size: cover; 
-        background-position: center; 
-        background-attachment: fixed;
+.parallax {
+    height: 70vh; 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; /* Mantieni su desktop */
 }
-
 
 /* Stili specifici per dispositivi mobili (iPhone o altri dispositivi con max larghezza di 768px) */
 @media (max-width: 768px) {
     .parallax {
         height: 50vh; /* Altezza a schermo intero per mobile */
         width: 100%; /* Larghezza a schermo intero */
-        background-size: contain; /* Copre tutta l'area disponibile */
+        background-size: cover; /* Copre tutta l'area disponibile */
         background-position: center; /* Centra l'immagine */
-
+        background-attachment: scroll; /* Rimuove l'effetto parallax su mobile */
     }
 }
-
