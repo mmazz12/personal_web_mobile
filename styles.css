@@ -358,6 +358,11 @@ h2 {
     margin-bottom: 5px;
 }
 
+a {
+    text-decoration-color: #a3a2a2; /* Set the color of the underline to grey */
+    text-decoration-thickness: 1px; /* Set the thickness of the underline */
+}
+
 .outreach-column ul li a {
     color: #666;
     text-decoration: none;
