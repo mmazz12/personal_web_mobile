@@ -699,24 +699,21 @@ footer {
 
     /* Adjust the parallax section to match the projects */
     .parallax {
-        height: 55vh; /* Match the height of the projects */
-        background-size: cover; /* Ensure background image covers the entire area */
-        background-position: center; /* Start by showing the top of the image */
-        background-attachment: fixed; /* Parallax effect: background scrolls at a different rate than foreground */
+        height: 70vh; 
+        background-size: cover; 
+        background-position: center; 
+        background-attachment: fixed;
 }
 
-.parallax {
-    background-image: url('_images/profile.jpg');
-    height: 55vh; /* Riduci l'altezza per essere più simile alle immagini dei progetti */
-    background-size: contain; /* Mantieni le proporzioni dell'immagine */
-    background-position: center bottom; /* Mostra la parte inferiore dell'immagine */
-    background-repeat: no-repeat;
-}
 
+/* Stili specifici per dispositivi mobili (iPhone o altri dispositivi con max larghezza di 768px) */
 @media (max-width: 768px) {
     .parallax {
-        height: 35vh; /* Altezza minore per schermi piccoli */
-        background-size: cover; /* Copre l'area di sfondo mantenendo la proporzione */
+        height: 50vh; /* Altezza a schermo intero per mobile */
+        width: 100%; /* Larghezza a schermo intero */
+        background-size: contain; /* Copre tutta l'area disponibile */
         background-position: center; /* Centra l'immagine */
+
     }
 }
+
