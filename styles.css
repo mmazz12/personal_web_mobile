@@ -409,15 +409,45 @@ footer {
     gap: 0;
 }
 
+@media (max-width: 768px) {
+    footer {
+        font-size: 11px; /* Reduce footer text size on smaller screens */
+    }
+}
+
+.projects-mosaic {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+}
+
+@media (max-width: 1200px) {
+    .projects-mosaic {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1000px) {
+    .projects-mosaic {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .projects-mosaic {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 30vh;
+    }
+}
+
 @media (max-width: 500px) {
     .projects-mosaic {
-        grid-template-columns: repeat(1, 1fr); /* One column layout */
-        grid-auto-rows: 100vh; /* Adjust to a rectangular height (35% of the viewport height) */
-    }
-
-    .project {
-        background-size: cover; /* Ensure background image covers the entire area */
-        background-position: bottom; /* Crop image from the bottom */
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: 45vh;
     }
 }
 
@@ -673,4 +703,20 @@ footer {
         background-size: cover; /* Ensure background image covers the entire area */
         background-position: center; /* Start by showing the top of the image */
         background-attachment: fixed; /* Parallax effect: background scrolls at a different rate than foreground */
+}
+
+.parallax {
+    background-image: url('_images/profile.jpg');
+    height: 55vh; /* Riduci l'altezza per essere più simile alle immagini dei progetti */
+    background-size: contain; /* Mantieni le proporzioni dell'immagine */
+    background-position: center bottom; /* Mostra la parte inferiore dell'immagine */
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    .parallax {
+        height: 35vh; /* Altezza minore per schermi piccoli */
+        background-size: cover; /* Copre l'area di sfondo mantenendo la proporzione */
+        background-position: center; /* Centra l'immagine */
+    }
 }
