@@ -707,10 +707,9 @@ footer {
 /* Stili specifici per dispositivi mobili (iPhone o altri dispositivi con max larghezza di 768px) */
 @media (max-width: 768px) {
     .parallax {
-        height: 50vh; /* Altezza a schermo intero per mobile */
-        width: 100%; /* Larghezza a schermo intero */
+        height: 30vh; /* Altezza a schermo intero per mobile */
         background-size: cover; /* Copre tutta l'area disponibile */
         background-position: center; /* Centra l'immagine */
-        background-attachment: scroll; /* Rimuove l'effetto parallax su mobile */
+        
     }
 }
