@@ -33,9 +33,6 @@ html {
 }
 
 
-
-
-
 /* Outreach section styles */
 .outreach-container {
     max-width: 1200px;
@@ -128,43 +125,36 @@ nav .name {
 }
 
 #menu-icon {
-    display: none; /* Initially hidden on larger screens */
+    display: none; /* Nascondi su schermi più grandi */
     flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 1001; /* Ensure it appears above other content */
-    width: 30px; /* Width of the icon */
-    height: 30px; /* Height of the icon */
-    background-color: transparent; /* Ensure no background color is set */
-    padding: 5px; /* Add some padding around the icon */
+    z-index: 1001; /* Assicurati che sia sopra altri elementi */
+    width: 30px; /* Larghezza dell'icona */
+    height: 30px; /* Altezza dell'icona */
+    background-color: transparent; /* Nessun colore di sfondo */
+    padding: 5px; /* Aggiungi un po' di padding attorno all'icona */
+    position: absolute; /* Posiziona in modo assoluto per avere un maggiore controllo */
+    right: 20px; /* Posiziona a destra all'interno della nav */
+    top: 10px; /* Posiziona in alto all'interno della nav */
 }
 
+
 #menu-icon span {
-    width: 30px; /* Width of each line */
-    height: 3px; /* Height of each line */
-    background-color: #333; /* Color of the lines */
-    margin: 5px 0; /* Space between the lines */
-    border-radius: 3px; /* Rounded edges for a softer look */
-    display: block;
-    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    width: 30px; /* Larghezza di ciascuna linea */
+    height: 3px; /* Altezza di ciascuna linea */
+    background-color: #333; /* Colore delle linee */
+    margin: 5px 0; /* Spazio tra le linee */
+    border-radius: 3px; /* Angoli arrotondati per un aspetto più morbido */
+    display: block; /* Assicurati che le linee siano visibili */
+    transition: all 0.3s ease; /* Transizione fluida per l'effetto hover */
 }
 
 #menu-icon:hover span {
     background-color: #888; /* Change color on hover */
 }
 
-#menu-icon.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px); /* Top line becomes diagonal */
-}
-
-#menu-icon.active span:nth-child(2) {
-    opacity: 0; /* Middle line disappears */
-}
-
-#menu-icon.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px); /* Bottom line becomes diagonal */
-}
 
 nav ul {
     list-style-type: none;
@@ -419,31 +409,18 @@ footer {
     gap: 0;
 }
 
-@media (max-width: 1200px) {
-    .projects-mosaic {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 1000px) {
-    .projects-mosaic {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 700px) {
-    .projects-mosaic {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 30vh;
-    }
-}
-
 @media (max-width: 500px) {
     .projects-mosaic {
-        grid-template-columns: repeat(1, 1fr);
-        grid-auto-rows: 50vh;
+        grid-template-columns: repeat(1, 1fr); /* One column layout */
+        grid-auto-rows: 100vh; /* Adjust to a rectangular height (35% of the viewport height) */
+    }
+
+    .project {
+        background-size: cover; /* Ensure background image covers the entire area */
+        background-position: bottom; /* Crop image from the bottom */
     }
 }
+
 
 .project {
     position: relative;
@@ -641,4 +618,59 @@ footer {
         max-width: none; /* Allow full width for each column on mobile */
         text-align: left;
     }
+}
+
+@media (max-width: 768px) {
+    /* Center the email and social media icons for mobile */
+    .outreach-container {
+        flex-direction: column;
+        align-items: center; /* Center-align the children horizontally */
+    }
+
+    .outreach-column {
+        text-align: center; /* Center text inside each column */
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    .find-me-social-icons {
+        display: flex;
+        justify-content: center; /* Center icons horizontally */
+        margin-bottom: 15px; /* Add some spacing below the icons */
+    }
+
+    .find-me-social-icons a {
+        margin: 0 5px; /* Adjust spacing between the icons */
+    }
+
+    /* Align the "MIT Senseable City Lab" section */
+    .outreach-column ul.no-dash {
+        text-align: center; /* Center text inside the column */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+ /* Center email link in the specific email column only */
+ .email-column ul {
+    display: flex;
+    justify-content: center; /* Center the email link horizontally */
+    flex-direction: column;
+    align-items: center; /* Ensure text aligns in the center */
+}
+
+
+/* Remove dash for email, address, and coordinates sections */
+.email-column ul.no-dash li::before,
+.outreach-column ul.no-dash li::before {
+    content: none; /* Removes the dash before list items */
+}
+
+
+    /* Adjust the parallax section to match the projects */
+    .parallax {
+        height: 55vh; /* Match the height of the projects */
+        background-size: cover; /* Ensure background image covers the entire area */
+        background-position: center; /* Start by showing the top of the image */
+        background-attachment: fixed; /* Parallax effect: background scrolls at a different rate than foreground */
 }
